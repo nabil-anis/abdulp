@@ -4,42 +4,47 @@ import React from 'react';
 const About: React.FC = () => {
   return (
     <section id="about" className="py-24">
-      <div className="grid md:grid-cols-2 gap-16 items-center">
+      <div className="grid lg:grid-cols-2 gap-20 items-center">
         <div className="relative">
-          <div className="aspect-square rounded-3xl overflow-hidden glass-card p-2">
+          <div className="absolute -top-10 -left-10 w-40 h-40 bg-xiaomi-green/20 blur-3xl rounded-full"></div>
+          <div className="relative aspect-[4/5] rounded-[3rem] overflow-hidden glass-card p-3 rotate-2 hover:rotate-0 transition-transform duration-500">
             <img 
-              src="https://picsum.photos/seed/abdullah/800/800" 
-              alt="Abdullah" 
-              className="w-full h-full object-cover rounded-2xl opacity-80 grayscale hover:grayscale-0 transition-all duration-700"
+              src="https://picsum.photos/seed/abdullah_creative/800/1000" 
+              alt="Abdullah Profile" 
+              className="w-full h-full object-cover rounded-[2.5rem]"
             />
           </div>
-          <div className="absolute -bottom-6 -right-6 glass-card p-6 rounded-2xl border-blue-500/20">
-            <span className="text-4xl font-bold gradient-text">4+</span>
-            <p className="text-sm text-gray-400 mt-1 font-medium">Years of Experience</p>
+          <div className="absolute -bottom-8 -right-8 glass-card p-8 rounded-[2rem] border-xiaomi-pink/20 shadow-xl">
+            <span className="text-5xl font-black text-xiaomi-pink">Hi!</span>
+            <p className="text-xs font-bold dark:text-gray-400 text-gray-500 mt-2 tracking-widest uppercase">From Abdullah</p>
           </div>
         </div>
 
         <div>
-          <h2 className="text-4xl font-bold mb-6">About <span className="gradient-text">Me</span></h2>
-          <p className="text-gray-400 leading-relaxed mb-6">
-            I am a passionate software engineer with a keen eye for design and performance. 
-            My journey began when I built my first website at 16, and since then, I've 
-            fallen in love with the intersection of code and aesthetics.
-          </p>
-          <p className="text-gray-400 leading-relaxed mb-8">
-            I specialize in React, Node.js, and modern UI/UX principles. I believe that 
-            software should not only work perfectly but also feel intuitive and delightful to use.
-          </p>
+          <h2 className="text-5xl font-black mb-8 leading-tight">
+            I don't just write code, <br />
+            <span className="text-xiaomi-green">I write experiences.</span>
+          </h2>
+          <div className="space-y-6 dark:text-gray-300 text-gray-600 text-lg leading-relaxed">
+            <p>
+              Hey there! I'm Abdullah, a digital architect based in the future. I specialize in building interfaces that are not only functional but visually striking. 
+            </p>
+            <p>
+              Inspired by minimalist tech like Xiaomi, I believe in clean lines, vibrant colors, and performance that feels like butter.
+            </p>
+          </div>
           
-          <div className="grid grid-cols-2 gap-4">
-            <div className="glass-card p-4 rounded-xl">
-              <i className="fa-solid fa-bolt text-blue-400 mb-2"></i>
-              <h4 className="font-bold text-sm">Fast Learner</h4>
-            </div>
-            <div className="glass-card p-4 rounded-xl">
-              <i className="fa-solid fa-code text-purple-400 mb-2"></i>
-              <h4 className="font-bold text-sm">Clean Code</h4>
-            </div>
+          <div className="grid grid-cols-3 gap-4 mt-12">
+            {[
+              { label: 'Ideas', color: 'bg-xiaomi-orange' },
+              { label: 'Code', color: 'bg-xiaomi-blue' },
+              { label: 'Launch', color: 'bg-xiaomi-green' }
+            ].map(item => (
+              <div key={item.label} className="text-center">
+                <div className={`w-full h-2 rounded-full ${item.color} mb-3`}></div>
+                <span className="text-xs font-black uppercase tracking-widest dark:text-gray-400 text-gray-500">{item.label}</span>
+              </div>
+            ))}
           </div>
         </div>
       </div>

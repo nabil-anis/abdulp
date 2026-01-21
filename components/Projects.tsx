@@ -3,59 +3,60 @@ import React from 'react';
 
 const projects = [
   {
-    title: "E-Commerce Reimagined",
-    description: "A luxury shopping experience built with Next.js and Stripe integration.",
-    image: "https://picsum.photos/seed/shop/600/400",
-    tags: ["React", "Tailwind", "Node.js"]
+    title: "Hyper OS UI",
+    description: "System design exploration for next-gen mobile interfaces.",
+    image: "https://picsum.photos/seed/hyper/800/600",
+    color: "bg-xiaomi-orange",
+    tag: "Design"
   },
   {
-    title: "AI Dashboard",
-    description: "Real-time analytics platform leveraging GPT for data insights.",
-    image: "https://picsum.photos/seed/ai/600/400",
-    tags: ["TypeScript", "D3.js", "Gemini API"]
+    title: "Eco Flow",
+    description: "Sustainability tracking app with glassmorphic visuals.",
+    image: "https://picsum.photos/seed/flow/800/600",
+    color: "bg-xiaomi-green",
+    tag: "Mobile"
   },
   {
-    title: "Social Sphere",
-    description: "A secure, privacy-focused social network for remote teams.",
-    image: "https://picsum.photos/seed/social/600/400",
-    tags: ["React Native", "Firebase", "WebRTC"]
+    title: "Neon Pulse",
+    description: "Music platform using real-time frequency visualization.",
+    image: "https://picsum.photos/seed/pulse/800/600",
+    color: "bg-xiaomi-purple",
+    tag: "Web App"
   }
 ];
 
 const Projects: React.FC = () => {
   return (
     <section id="projects" className="py-24">
-      <div className="text-center mb-16">
-        <h2 className="text-4xl font-bold mb-4">Selected <span className="gradient-text">Works</span></h2>
-        <p className="text-gray-400">Handpicked projects that showcase my skills and passion.</p>
+      <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+        <div>
+          <h2 className="text-5xl font-black mb-4">Latest <span className="text-xiaomi-blue">Drops</span></h2>
+          <p className="dark:text-gray-400 text-gray-500 font-medium">A collection of things I'm proud of.</p>
+        </div>
+        <div className="text-xiaomi-orange font-black text-8xl opacity-10 hidden lg:block">WORK</div>
       </div>
 
-      <div className="grid md:grid-cols-3 gap-8">
+      <div className="grid md:grid-cols-3 gap-10">
         {projects.map((p, i) => (
-          <div key={i} className="glass-card rounded-3xl overflow-hidden group hover:scale-[1.02] transition-transform">
-            <div className="h-56 overflow-hidden">
+          <div key={i} className="group relative">
+            <div className="aspect-[4/3] rounded-[2.5rem] overflow-hidden mb-6 relative z-10 shadow-xl transition-all group-hover:-translate-y-2">
               <img 
                 src={p.image} 
                 alt={p.title} 
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                className="w-full h-full object-cover"
               />
-            </div>
-            <div className="p-6">
-              <div className="flex gap-2 mb-4 flex-wrap">
-                {p.tags.map(tag => (
-                  <span key={tag} className="text-[10px] uppercase font-bold tracking-wider px-2 py-1 bg-blue-500/10 text-blue-400 rounded-lg">
-                    {tag}
-                  </span>
-                ))}
+              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center text-black">
+                  <i className="fa-solid fa-arrow-up-right-from-square text-xl"></i>
+                </div>
               </div>
-              <h3 className="text-xl font-bold mb-2">{p.title}</h3>
-              <p className="text-gray-400 text-sm mb-6 leading-relaxed">
-                {p.description}
-              </p>
-              <button className="text-sm font-bold flex items-center gap-2 group-hover:text-blue-400 transition-colors">
-                View Project <i className="fa-solid fa-arrow-right text-xs"></i>
-              </button>
             </div>
+            
+            <span className={`inline-block px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest text-white mb-4 ${p.color}`}>
+              {p.tag}
+            </span>
+            <h3 className="text-2xl font-black mb-2 group-hover:text-xiaomi-orange transition-colors">{p.title}</h3>
+            <p className="dark:text-gray-400 text-gray-500 text-sm leading-relaxed">{p.description}</p>
           </div>
         ))}
       </div>

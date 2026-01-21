@@ -4,43 +4,60 @@ import React from 'react';
 const Contact: React.FC = () => {
   return (
     <section id="contact" className="py-24">
-      <div className="max-w-4xl mx-auto glass-card rounded-3xl p-10 md:p-16 border-blue-500/20 shadow-2xl shadow-blue-900/10">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-black mb-4 tracking-tight">Let's <span className="gradient-text">Talk.</span></h2>
-          <p className="text-gray-400">Have a vision? Let's make it a reality. Drop me a line below.</p>
+      <div className="max-w-5xl mx-auto flex flex-col lg:flex-row gap-20">
+        <div className="flex-1">
+          <h2 className="text-6xl font-black mb-8 leading-none">
+            Let's make <br />
+            <span className="text-xiaomi-orange">History.</span>
+          </h2>
+          <p className="dark:text-gray-400 text-gray-600 text-lg mb-12">
+            Ready to start your next big project with Abdullah? Reach out and let's discuss how we can build something incredible.
+          </p>
+          
+          <div className="space-y-6">
+            <div className="flex items-center gap-6 group">
+              <div className="w-14 h-14 rounded-2xl bg-xiaomi-blue flex items-center justify-center text-white text-xl transition-transform group-hover:rotate-12">
+                <i className="fa-solid fa-envelope"></i>
+              </div>
+              <div>
+                <p className="text-xs font-bold text-gray-500 uppercase tracking-widest">Email me</p>
+                <p className="text-xl font-bold dark:text-white text-black">hello@abdullah.dev</p>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <form className="grid grid-cols-1 md:grid-cols-2 gap-6" onSubmit={(e) => e.preventDefault()}>
-          <div className="flex flex-col gap-2">
-            <label className="text-xs font-bold text-gray-400 uppercase">Name</label>
-            <input 
-              type="text" 
-              placeholder="Your Name" 
-              className="bg-white/5 border border-white/10 rounded-xl px-5 py-3 outline-none focus:border-blue-500 transition-colors"
-            />
-          </div>
-          <div className="flex flex-col gap-2">
-            <label className="text-xs font-bold text-gray-400 uppercase">Email</label>
-            <input 
-              type="email" 
-              placeholder="your@email.com" 
-              className="bg-white/5 border border-white/10 rounded-xl px-5 py-3 outline-none focus:border-blue-500 transition-colors"
-            />
-          </div>
-          <div className="md:col-span-2 flex flex-col gap-2">
-            <label className="text-xs font-bold text-gray-400 uppercase">Message</label>
-            <textarea 
-              rows={4} 
-              placeholder="How can I help you?" 
-              className="bg-white/5 border border-white/10 rounded-xl px-5 py-3 outline-none focus:border-blue-500 transition-colors resize-none"
-            ></textarea>
-          </div>
-          <div className="md:col-span-2">
-            <button className="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 rounded-xl transition-all shadow-lg shadow-blue-900/40">
-              Send Message
+        <div className="flex-1 glass-card p-10 rounded-[3rem]">
+          <form className="space-y-6" onSubmit={e => e.preventDefault()}>
+            <div className="space-y-2">
+              <label className="text-xs font-black uppercase tracking-widest text-xiaomi-orange">Nickname</label>
+              <input 
+                type="text" 
+                placeholder="Tony Stark"
+                className="w-full bg-black/5 dark:bg-white/5 border-2 border-transparent focus:border-xiaomi-orange rounded-2xl px-6 py-4 outline-none transition-all dark:text-white text-black"
+              />
+            </div>
+            <div className="space-y-2">
+              <label className="text-xs font-black uppercase tracking-widest text-xiaomi-blue">Digital Address</label>
+              <input 
+                type="email" 
+                placeholder="tony@stark.com"
+                className="w-full bg-black/5 dark:bg-white/5 border-2 border-transparent focus:border-xiaomi-blue rounded-2xl px-6 py-4 outline-none transition-all dark:text-white text-black"
+              />
+            </div>
+            <div className="space-y-2">
+              <label className="text-xs font-black uppercase tracking-widest text-xiaomi-green">The Vision</label>
+              <textarea 
+                rows={4} 
+                placeholder="Tell me everything..."
+                className="w-full bg-black/5 dark:bg-white/5 border-2 border-transparent focus:border-xiaomi-green rounded-2xl px-6 py-4 outline-none transition-all dark:text-white text-black resize-none"
+              ></textarea>
+            </div>
+            <button className="w-full bg-black dark:bg-white text-white dark:text-black font-black py-5 rounded-2xl transition-all hover:bg-xiaomi-orange hover:text-white">
+              Push to Start
             </button>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     </section>
   );

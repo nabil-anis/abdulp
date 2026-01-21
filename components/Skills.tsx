@@ -1,47 +1,56 @@
 
 import React from 'react';
 
-const skillCategories = [
-  {
-    name: "Frontend",
-    skills: ["React", "Vue", "TypeScript", "Tailwind CSS", "Next.js"]
-  },
-  {
-    name: "Backend",
-    skills: ["Node.js", "Python", "PostgreSQL", "MongoDB", "GraphQL"]
-  },
-  {
-    name: "Design & Tools",
-    skills: ["Figma", "Docker", "Git", "Vercel", "AWS"]
-  }
-];
-
 const Skills: React.FC = () => {
+  const skills = [
+    { name: "React", color: "border-xiaomi-blue text-xiaomi-blue" },
+    { name: "Next.js", color: "border-white dark:border-white text-black dark:text-white" },
+    { name: "Tailwind", color: "border-xiaomi-blue text-xiaomi-blue" },
+    { name: "TypeScript", color: "border-xiaomi-blue text-xiaomi-blue" },
+    { name: "Figma", color: "border-xiaomi-pink text-xiaomi-pink" },
+    { name: "Node.js", color: "border-xiaomi-green text-xiaomi-green" },
+    { name: "Python", color: "border-xiaomi-orange text-xiaomi-orange" },
+    { name: "Docker", color: "border-xiaomi-blue text-xiaomi-blue" },
+    { name: "GraphQL", color: "border-xiaomi-pink text-xiaomi-pink" },
+  ];
+
   return (
     <section id="skills" className="py-24">
-      <div className="glass-card rounded-[40px] p-12 relative overflow-hidden">
-        <div className="absolute top-0 right-0 p-8 text-blue-500/20 text-9xl font-black select-none pointer-events-none">
-          CODE
-        </div>
-        
-        <h2 className="text-4xl font-bold mb-12 relative z-10">
-          My <span className="gradient-text">Toolkit</span>
-        </h2>
-
-        <div className="grid md:grid-cols-3 gap-12 relative z-10">
-          {skillCategories.map((cat, idx) => (
-            <div key={idx}>
-              <h4 className="text-blue-400 font-bold uppercase tracking-widest text-xs mb-6">{cat.name}</h4>
-              <ul className="space-y-4">
-                {cat.skills.map(skill => (
-                  <li key={skill} className="flex items-center gap-3 group">
-                    <div className="w-2 h-2 rounded-full bg-blue-500 group-hover:w-4 transition-all"></div>
-                    <span className="text-gray-300 font-medium group-hover:text-white">{skill}</span>
-                  </li>
-                ))}
-              </ul>
+      <div className="glass-card rounded-[3rem] p-12 lg:p-20">
+        <div className="max-w-3xl">
+          <h2 className="text-5xl font-black mb-12">
+            The <span className="text-xiaomi-purple">Powerhouse</span> behind the scenes.
+          </h2>
+          
+          <div className="flex flex-wrap gap-4">
+            {skills.map((skill) => (
+              <div 
+                key={skill.name}
+                className={`px-8 py-4 rounded-2xl border-2 font-black text-xl transition-all hover:bg-current hover:text-white cursor-default ${skill.color}`}
+              >
+                {skill.name}
+              </div>
+            ))}
+          </div>
+          
+          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div>
+              <h4 className="text-xiaomi-orange font-black text-4xl">99%</h4>
+              <p className="text-xs font-bold dark:text-gray-500 text-gray-400 uppercase mt-2">Optimization</p>
             </div>
-          ))}
+            <div>
+              <h4 className="text-xiaomi-blue font-black text-4xl">40+</h4>
+              <p className="text-xs font-bold dark:text-gray-500 text-gray-400 uppercase mt-2">Successes</p>
+            </div>
+            <div>
+              <h4 className="text-xiaomi-green font-black text-4xl">0ms</h4>
+              <p className="text-xs font-bold dark:text-gray-500 text-gray-400 uppercase mt-2">Latency</p>
+            </div>
+            <div>
+              <h4 className="text-xiaomi-pink font-black text-4xl">∞</h4>
+              <p className="text-xs font-bold dark:text-gray-500 text-gray-400 uppercase mt-2">Creativity</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
